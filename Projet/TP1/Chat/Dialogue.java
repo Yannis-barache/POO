@@ -8,5 +8,6 @@ public class Dialogue {
         System.out.println(felix.getNom());
         felix.miaule();
         System.out.println(ozone.getNom());
+        ozone.miaule();
     }
 }
