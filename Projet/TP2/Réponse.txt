@@ -1,0 +1,32 @@
+2.1:
+
+Il faut ajouter la classe Flotte
+
+Flotte
+---------------
+- nom:String
+- vaisseaux: List<Vaisseau>
+------------------------------------
+
++ Flotte(nom:String) 
+
++ Flotte()
+
++ ajoute(vaisseau:Vaisseau):void
+
++ ajoute(nom:String, puissanceDeFeu:int, nombreDePassagers:int):void
+
++ ajoute(nom:String, puissanceDeFeu:int):void
+
++ getNom():String
+
++ totalPuissance():int
+
++ nombreVaisseaux():int
+
+------------------------------------------------------------------------
+
+
+                -vaisseaux
+Flotte -----------> Vaisseau
+                   *
