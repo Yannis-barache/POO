@@ -1,6 +1,6 @@
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Flotte {
     private String nom;
@@ -56,11 +56,50 @@ public class Flotte {
         }
         return puissance;
     }
-
     /** Retourne le nombre de vaisseaux dans la flotte
      * @return Un int qui est le nombre de vaisseaux dans la flotte*/
     public int nombreVaisseaux() {
         return this.vaisseaux.size();
     }
+
+    /** Retourne le nombre de vaisseaux sans passagers dans la flotte
+     * @return Un int qui est le nombre de vaisseaux sans passagers dans la flotte*/
+    public int nombreDeVaisseauxSansPassagers() {
+        int nombre = 0;
+        for (Vaisseau vaisseau : this.vaisseaux) {
+            if (vaisseau.getNombrePassagers() == 0) {
+                nombre++;
+            }
+        }
+        return nombre;
+
+    }
+
+    /** Retourne le vaisseau avec le plus de puissance de feu
+     * @return Le vaisseau le plus puissant*/
+    public int puissanceDeFeuMax() {
+        int puissanceMax = 0;
+        for (Vaisseau vaisseau : this.vaisseaux) {
+            if (vaisseau.getPuissance() > puissanceMax) {
+                puissanceMax = vaisseau.getPuissance();
+            }
+        }
+        return puissanceMax;
+    }
+
+    /** Retourne le nom du vaisseau avec le moins de puissance de feu dans la flotte
+     * @return Le nom du vaisseau le moins puissant*/
+    public String nomDuVaisseauLeMoinsPuissant() {
+        int puissanceMin = this.puissanceDeFeuMax();
+        String nomVaisseauMin = "";
+        for (Vaisseau vaisseau : this.vaisseaux) {
+            if (vaisseau.getPuissance() < puissanceMin) {
+                puissanceMin = vaisseau.getPuissance();
+                nomVaisseauMin = vaisseau.getNom();
+            }
+        }
+        return nomVaisseauMin;
+    }
+
 
 }
