@@ -36,7 +36,7 @@ public class Lettre{
             indice = 26;
         }
         else {
-            indice = indice - 65;
+            indice -= 65;
         }
 
         return indice;
@@ -44,9 +44,25 @@ public class Lettre{
 
     @Override
     public String toString(){
-        return "Lettre : " + toChar() + " | Numéro : " + toNumero() + " | Morse : " + toMorse() ;
+        return toChar()+"" ;
     }
     public String toMorse(){
         return alphabetMorse.get(toNumero());
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null) {
+            return false;
+        }
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof Lettre){
+            Lettre l = (Lettre) obj;
+            return this.lettre == l.lettre;
+        }
+        return false;
+    }
 }
+
