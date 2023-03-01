@@ -36,13 +36,21 @@ public class Executable {
         griffondor.ajoute("Dean" ,9,4);
 
         assert adrian.getNom().equals("Adrian");
+
         assert dean.getCourage()==9;
+
         assert hermione.getSagesse()==6;
+
         assert !adrian.estCourageux();
+
         assert neuville.estCourageux();
+
         assert serpentard.nombreEleve()==4;
+
         assert griffondor.contientCourageux();
+
         assert poufsouffle.leMoinsCourageux().equals(norbert);
+
         assert serpentard.lePlusSage().equals(pansy);
         
 

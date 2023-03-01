@@ -1,5 +1,6 @@
-import java.security.DrbgParameters.NextBytes;
+import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Ecole {
     private String nom;
@@ -17,12 +18,19 @@ public class Ecole {
     }
     
     public Maison plusGrandeMaison(){
-        plusGrandeMaison=new Maison("Barachicha")
+        Maison plusGrandeMaison=new Maison("Barachicha");
         for (Maison maison : this.maisons){
-            if (maison.nombreEleve()> plusGrandeMaison){
+            if (maison.nombreEleve()> plusGrandeMaison.nombreEleve()){
                 plusGrandeMaison=maison;
             }
         }
         return plusGrandeMaison;
     }   
+
+   // public ArrayList<Sorcier> lesCourageux(){
+//   List<Sorcier> lesCourageux= new ArrayList<>();
+
+  //      return lesCourageux;
+
+    //}
 }

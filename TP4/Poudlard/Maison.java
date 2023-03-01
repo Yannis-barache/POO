@@ -11,9 +11,9 @@ public class Maison {
         this.nom = nom;
     }
 
-    public boolean ajouter (String nomSorcier, int courage, int sagesse){
+    public boolean ajoute (String nomSorcier, int courage, int sagesse){
         Sorcier ajout= new Sorcier(nomSorcier, courage, sagesse);
-        if (ajout.contains(this.eleves)){
+        if (this.eleves.contains(ajout)){
             eleves.add(ajout);
             return true;
         }
@@ -34,7 +34,7 @@ public class Maison {
     }
 
     public Sorcier leMoinsCourageux(){
-        moinsCourageux=new Sorcier("gabin", 40, 0);
+        Sorcier moinsCourageux=new Sorcier("gabin", 40, 0);
         for (Sorcier sorcier : this.eleves){
             if (sorcier.getCourage() < moinsCourageux.getCourage()){
                 moinsCourageux=sorcier;
@@ -45,7 +45,7 @@ public class Maison {
     }
     
     public Sorcier lePlusSage(){
-        plusSage=new Sorcier("gabin", 0, 40);
+        Sorcier plusSage=new Sorcier("gabin", 0, 40);
         for (Sorcier sorcier : this.eleves){
             if (sorcier.getSagesse() > plusSage.getSagesse()){
                 plusSage=sorcier;

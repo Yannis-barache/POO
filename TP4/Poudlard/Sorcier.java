@@ -1,6 +1,9 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 public class Sorcier implements Comparable<Sorcier> {
     private String nom;
-    private int courage;
+    private Integer courage;
     private int sagesse;
     
     public Sorcier(String nom, int courage, int sagesse){
