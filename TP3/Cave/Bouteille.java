@@ -8,12 +8,21 @@ public class Bouteille {
         this.appelation=appelation;
         this.millesime=millesime;    
     }
-    public
+    public String getRegion(){
+        return this.region;
+    }
+    public String getAppellation(){
+        return this.appelation;
+    }
+    public int getMillesime(){
+        return this.millesime;
+    }
+
     
     @Override
     public boolean equals (Object obj){
-        if (obj == this) ( return true;)
-        if (obj == null) (return false;)
+        if (obj == this) { return true;}
+        if (obj == null) {return false;}
         if (obj instanceof Bouteille){
             Bouteille b = (Bouteille) obj;
             return b.getAppellation().equals(this.getAppellation())

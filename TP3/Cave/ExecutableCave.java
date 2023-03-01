@@ -12,7 +12,7 @@ public class ExecutableCave {
     assert 3 == maCave.nbBouteillesDeRegion("Bordeaux") ;
     Bouteille b =maCave.plusVieilleBouteille() ;
     assert "Nuits St George".equals(b.getAppellation () ) ;
-    assert maCave . contient ("Bordeaux","Pomerol",2007) ;
+    assert maCave.contient ("Bordeaux","Pomerol",2007) ;
     assert !maCave.contient("Bordeaux","Pomerol", 2003) ;
     }
 }
