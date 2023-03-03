@@ -11,12 +11,14 @@ public class Ecole {
         this.maisons = new ArrayList<>();
 
     }
-
+    /** Ajoute une maison à l'école
+     *  @param maison Une instance de la classe Maison qui va être rajoutée*/
     public void ajouter (Maison maison){
         this.maisons.add(maison);
 
     }
-    
+    /** Retourne la maison avec le plus d'élèves
+     * @return La maison avec le plus d'élèves dans l'école.*/
     public Maison plusGrandeMaison(){
         Maison plusGrandeMaison=new Maison("Barachicha");
         for (Maison maison : this.maisons){

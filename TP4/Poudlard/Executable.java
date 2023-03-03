@@ -24,7 +24,7 @@ public class Executable {
         griffondor.ajoute("Neuville" ,10,4);
 
         Sorcier pansy = new Sorcier("Pansy" ,4,10);
-        griffondor.ajoute("Pansy" ,4,10);
+        serpentard.ajoute("Pansy" ,4,10);
 
         Sorcier gregory = new Sorcier("Gregory" ,6,7);
         serpentard.ajoute("Gregory" ,6,7);
@@ -41,7 +41,7 @@ public class Executable {
 
         assert hermione.getSagesse()==6;
 
-        assert !adrian.estCourageux();
+        assert !gilderoy.estCourageux();
 
         assert neuville.estCourageux();
 
@@ -49,9 +49,14 @@ public class Executable {
 
         assert griffondor.contientCourageux();
 
-        assert poufsouffle.leMoinsCourageux().equals(norbert);
+        assert poufsouffle.leMoinsCourageux().equals(new Sorcier("Norbert" ,3,7));
 
         assert serpentard.lePlusSage().equals(pansy);
+        System.out.println(serpentard.getEleves());
+        serpentard.trierParCourage();
+        System.out.println(serpentard.getEleves());
+
+        System.out.println("Test ok ");
         
 
     }
