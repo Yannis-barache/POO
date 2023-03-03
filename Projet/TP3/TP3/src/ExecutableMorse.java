@@ -8,7 +8,6 @@ public class ExecutableMorse {
          assert a.toNumero() == 0;
          assert a.toMorse().equals ("=_===") ;
          assert a.toChar()== 'A';
-         System.out.println(a.toString());
          System.out.println("Tous les tests sont passés");
         }
     }

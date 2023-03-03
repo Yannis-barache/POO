@@ -38,21 +38,40 @@ public class Texte {
 
     public void toSon() {
         Son son;
+        String partie;
         for (Lettre lettre : this.texte) {
-            son= new Son();
-            lettre= new Lettre(lettre.toMorse());
-            for (int i = 0; i < lettre.toMorse().length(); i++) {
-                if (lettre.toMorse().charAt(i) == '=') {
-                    son.tone(1000);
+            son = new Son();
+
+            lettre = new Lettre(lettre.toMorse());
+            int ajout = 0;
+            for (int i=0 ; i<lettre.toMorse().length(); i++){
+                if (lettre.toMorse().charAt(i)== '_'){
                     son.pause();
+
                 }
-                else {
-                    son.tone(500);
-                    son.pause();
+                if (lettre.toMorse().charAt(i)=='=') {
+                    if (i + 1 >= lettre.toMorse().length()) {
+                        son.tone(100);
+
+                    } else {
+                        if (lettre.toMorse().charAt(i + 1) == '=') {
+                            son.tone(300);
+                            i += 2;
+                        } else {
+                            son.tone(100);
+
+                        }
+                    }
                 }
+
+
+
+
             }
 
         }
 
     }
 }
+
+
