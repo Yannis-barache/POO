@@ -2,6 +2,8 @@ import java.util.List;
 import java.util.ArrayList;
 public class Texte {
     private List<Lettre> texte;
+
+    /** Créer une chaine de caractères à partir d'un String */
     public Texte(String texte){
         this.texte = new ArrayList<>();
         for (int i = 0; i < texte.length(); i++) {
@@ -9,6 +11,8 @@ public class Texte {
         }
     }
 
+    /** Renvoie en une chaine de caractère le texte
+     * @return La chaine en String*/
     @Override
     public String toString() {
         String res = "";
@@ -17,6 +21,9 @@ public class Texte {
         }
         return res;
     }
+
+    /** Renvoie en une chaine de caractère le morse
+     * @return Le morse en chaine*/
     public String toMorse(){
         String res="";
         for (Lettre lettre : this.texte){
@@ -24,10 +31,18 @@ public class Texte {
         }
         return res;
     }
+
+    /** Renvoie si la lettre est dans le texte
+     * @param lettre : la lettre à chercher
+     * @return true si la lettre est dans le texte, false sinon*/
     public boolean contient(Lettre lettre){
         return this.texte.contains(lettre);
     }
 
+
+    /** Renvoie la traduction en texte du morse passé en paramètre
+     * @param morse : le morse à convertir
+     * @return Le texte en String*/
     public String decode(String morse){
         String res = "";
         for (String s : morse.split(" ")){
@@ -36,6 +51,7 @@ public class Texte {
         return res;
     }
 
+    /** Joue le morse */
     public void toSon() {
         Son son;
         String partie;

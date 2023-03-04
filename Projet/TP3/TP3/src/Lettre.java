@@ -30,6 +30,11 @@ public class Lettre{
     public char toChar(){
         return (char) lettre;
     }
+
+    /**
+     * Renvoie le numéro de la lettre dans l'alphabet
+     * @return le numéro de la lettre dans l'alphabet
+     */
     public int toNumero(){
         int indice = (int) lettre ;
         if (indice == 32) {
@@ -42,14 +47,26 @@ public class Lettre{
         return indice;
     }
 
+    /**
+     * Renvoie la lettre en String
+     * @return la lettre en String
+     */
     @Override
     public String toString(){
         return toChar()+"" ;
     }
+
+    /**
+     * Renvoie la lettre en morse
+     * @return la lettre en morse
+     */
     public String toMorse(){
         return alphabetMorse.get(toNumero());
     }
 
+    /** Renvoie si la lettre est dans le texte
+     * @param obj : l'objet avec lequel on compare
+     * @return true si l'objet en paramètre est égal, false sinon*/
     @Override
     public boolean equals(Object obj){
         if (obj == null) {
