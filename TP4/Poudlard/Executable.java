@@ -4,6 +4,7 @@ public class Executable {
         Maison serpentard = new Maison("Serpentard");
         Maison poufsouffle = new Maison("Poufsouffle");
         Maison serdaigle = new Maison("Serdaigle");
+        Ecole Poudlard = new Ecole("Poudlard");
 
         Sorcier adrian = new Sorcier("Adrian" ,9,7);
         serpentard.ajoute("Adrian" ,9,7);
@@ -35,6 +36,12 @@ public class Executable {
         Sorcier dean = new Sorcier("Dean" ,9,4);
         griffondor.ajoute("Dean" ,9,4);
 
+        Poudlard.ajouter(griffondor);
+        Poudlard.ajouter(serpentard);
+        Poudlard.ajouter(poufsouffle);
+        Poudlard.ajouter(serdaigle);
+
+
         assert adrian.getNom().equals("Adrian");
 
         assert dean.getCourage()==9;
@@ -52,10 +59,20 @@ public class Executable {
         assert poufsouffle.leMoinsCourageux().equals(new Sorcier("Norbert" ,3,7));
 
         assert serpentard.lePlusSage().equals(pansy);
+
+        assert Poudlard.lesCourageux().size()==3;
+        assert Poudlard.lesCourageux().contains(neuville);
+        assert Poudlard.lesCourageux().contains(adrian);
+        assert Poudlard.lesCourageux().contains(dean);
+
+        System.out.println("Test trie par courage d'une maison ");
         System.out.println(serpentard.getEleves());
         serpentard.trierParCourage();
         System.out.println(serpentard.getEleves());
-
+        System.out.println(" ");
+        System.out.println("Test trie par courage d'une école ");
+        System.out.println(Poudlard.elevesTriesParCourage());
+        System.out.println(" ");
         System.out.println("Test ok ");
         
 
