@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.EnumMap;
+import java.util.List;
 public class Executable {
     public static void main(String[] args){
         Maison griffondor = new Maison("Griffondor");
@@ -64,15 +67,15 @@ public class Executable {
         assert Poudlard.lesCourageux().contains(neuville);
         assert Poudlard.lesCourageux().contains(adrian);
         assert Poudlard.lesCourageux().contains(dean);
+        assert Poudlard.plusGrandeMaison().equals(serpentard);
 
-        System.out.println("Test trie par courage d'une maison ");
-        System.out.println(serpentard.getEleves());
+        assert serpentard.getEleves().equals(Arrays.asList(adrian,drago,pansy,gregory));
         serpentard.trierParCourage();
-        System.out.println(serpentard.getEleves());
-        System.out.println(" ");
-        System.out.println("Test trie par courage d'une école ");
-        System.out.println(Poudlard.elevesTriesParCourage());
-        System.out.println(" ");
+        assert serpentard.getEleves().equals(Arrays.asList(pansy,drago,gregory,adrian));
+        
+        assert Poudlard.getEleves().equals(Arrays.asList(hermione,neuville,dean,pansy,drago,gregory,adrian,norbert,luna,gilderoy));
+        assert Poudlard.elevesTriesParCourage().equals(Arrays.asList(luna,norbert,pansy,drago,gregory,gilderoy,hermione,dean,adrian,neuville));
+    
         System.out.println("Test ok ");
         
 

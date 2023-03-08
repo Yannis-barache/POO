@@ -69,4 +69,32 @@ public class Ecole {
         return elevesTriesParCourage;
     }
 
+    /** Retourne la liste de tous les élèves de l'école
+     * @return La liste des sorciers
+     */
+
+    public List<Sorcier> getEleves(){
+        List<Sorcier> tout_eleves= new ArrayList<>();
+        for (Maison maison:this.maisons){
+            for (Sorcier sorcier :maison.getEleves()){
+                tout_eleves.add(sorcier);
+            }
+        }
+        return tout_eleves;
+    }
+
+    /** Retourne true si deux écoles ont le même nom, et les mêmes maisons false sinon
+     *  @param obj Un Object qui représente l'école à comparer
+     *  @return Un boolean qui représente si les deux écoles sont les mêmes ou non*/
+    @Override 
+    public boolean equals(Object obj){
+        if (obj==this){return true;}
+        if (obj==null){return false;}
+        if (obj instanceof Ecole){
+            Ecole ecole = (Ecole) obj;
+            return this.nom==ecole.nom && this.maisons==ecole.maisons;
+        }
+        return false;
+    }
+
 }

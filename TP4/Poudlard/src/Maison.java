@@ -27,6 +27,7 @@ public class Maison {
         return true;
 
     }
+
     /** Retourne le nombre de sorciers dans la maison
      *  @return Un int qui représente le nombre de sorciers dans la maison*/
     public int nombreEleve() {
@@ -79,6 +80,20 @@ public class Maison {
     /** Trie par ordre croissant les élèves en fonction de leur courage*/
     public void trierParCourage(){
         Collections.sort(this.eleves);
+    }
+
+    /** Retourne true si deux maisons ont le même nom et les mêmes étudiants, false sinon
+     *  @param obj Un Object qui représente la maison à comparer
+     *  @return Un boolean qui représente si les deux maisons sont les mêmes ou non*/
+    @Override
+    public boolean equals(Object obj){
+        if (obj==this){return true;}
+        if (obj==null){return false;}
+        if (obj instanceof Maison){
+            Maison maison = (Maison) obj;
+            return maison.nom== this.nom && this.eleves == maison.eleves;
+        }
+        return false;
     }
 }
     
