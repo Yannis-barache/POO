@@ -21,6 +21,6 @@ public class Executable{
     List<Personnage> grandeOreilles = fraternite.filtreOreille(25);
     System.out.println("Les grandes oreilles : "+grandeOreilles);
     List<Personnage> petiteBarbe= fraternite.filtreBarbe(10);
-    
+
     }
 }
