@@ -54,12 +54,9 @@ public class Texte {
     /** Joue le morse */
     public void toSon() {
         Son son;
-        String partie;
         for (Lettre lettre : this.texte) {
             son = new Son();
-
             lettre = new Lettre(lettre.toMorse());
-            int ajout = 0;
             for (int i=0 ; i<lettre.toMorse().length(); i++){
                 if (lettre.toMorse().charAt(i)== '_'){
                     son.pause();

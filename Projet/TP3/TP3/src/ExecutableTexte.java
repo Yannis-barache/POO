@@ -1,16 +1,16 @@
 public class ExecutableTexte {
     public static void main(String[] args ) {
-        Texte t = new Texte("BONJOUR");
-        Texte test = new Texte("HOLA");
-        assert t.toString().equals("BONJOUR");
-        assert t.toMorse().equals("===_=_=_= ===_===_=== ===_= =_===_===_=== ===_===_=== =_=_=== =_===_= ");
-        assert t.contient(new Lettre('B'));
-        assert !t.contient(new Lettre('Z'));
-        assert t.decode("===_=_=_= ===_===_=== ===_= =_===_===_=== ===_===_=== =_=_=== =_===_= ").equals("BONJOUR");
-        assert t.decode("=_===").equals("A");
-        assert !t.decode("=_===").equals("B");
-        assert t.decode("===_=_===_=").equals("C");
-        t.toSon();
+        Texte bonjour = new Texte("BONJOUR");
+        Texte hola = new Texte("HOLA");
+        assert bonjour.toString().equals("BONJOUR");
+        assert bonjour.toMorse().equals("===_=_=_= ===_===_=== ===_= =_===_===_=== ===_===_=== =_=_=== =_===_= ");
+        assert bonjour.contient(new Lettre('B'));
+        assert !bonjour.contient(new Lettre('Z'));
+        assert bonjour.decode("===_=_=_= ===_===_=== ===_= =_===_===_=== ===_===_=== =_=_=== =_===_= ").equals("BONJOUR");
+        assert bonjour.decode("=_===").equals("A");
+        assert !bonjour.decode("=_===").equals("B");
+        assert bonjour.decode("===_=_===_=").equals("C");
+        bonjour.toSon();
         System.out.println("Tous les tests sont passés");
 
     }

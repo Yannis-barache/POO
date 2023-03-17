@@ -23,5 +23,7 @@
 hs_err_pid*
 # **/out/
 **/doc
-
+**/.idea
+*.iml
+*.html
 
