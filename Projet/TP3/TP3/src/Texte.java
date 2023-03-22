@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class Texte {
     private List<Lettre> texte;
 
-    /** Créer une chaine de caractères à partir d'un String */
+    /** Créer une chaine de caractères à partir d'un String
+     * @param texte Une chaine de caractère qui définit le texte */
     public Texte(String texte){
         this.texte = new ArrayList<>();
         for (int i = 0; i < texte.length(); i++) {

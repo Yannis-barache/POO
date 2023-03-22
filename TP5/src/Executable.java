@@ -46,7 +46,7 @@ public class Executable {
         assert weekEndMai.totalDepense("vin")== 25.0;
         assert weekEndjuin.avoirPersonne(billy)==-22.40;
         assert weekEndjuin.avoirPersonne(davy)== 7.60;
-        
+        System.out.println("Tous les tests sont passés avec succès");
     }
     
 }
