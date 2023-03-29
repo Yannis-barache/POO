@@ -1,16 +1,18 @@
 import java.util.List;
 import java.util.ArrayList;
-import java.lang.Math;   
 
 public class Aquarium {
 
     private List<PetitPoisson> petitsPoissons;
     private List<GrosPoisson> grosPoissons;
+    private List<Algue> algues;
 
     public Aquarium(){
-        int nbrGrosPoissons =0;
         petitsPoissons = new ArrayList<>();
         grosPoissons = new ArrayList<>();
+        algues = new ArrayList<>();
+        grosPoissons.add(new GrosPoisson(5,5));
+        algues.add(new Algue(10));
     }
 
     public int getHauteur(){
@@ -30,6 +32,10 @@ public class Aquarium {
             dessin.union(grosPoisson.getDessin()); //ajoute un poisson
 
         }
+
+        for (Algue algue : this.algues){
+            dessin.union(algue.getDessin());
+        }
         
         return dessin;
     }
@@ -40,6 +46,10 @@ public class Aquarium {
         }
         for (GrosPoisson grosPoisson : this.grosPoissons){
             grosPoisson.evolue(); 
+        }
+
+        for (Algue algue : this.algues){
+            algue.ondule();
         }
     }
 }
