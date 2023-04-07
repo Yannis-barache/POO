@@ -42,6 +42,7 @@ public class Executable{
         System.out.println(complexes);
         System.out.println("Après le tri:");
         System.out.println(BibComplexe.trier(complexes, new ComparateurComplexe()));
+        System.out.println(BibComplexe.trier(complexes, new ComparateurComplexeNorme()));
 
     }
     
