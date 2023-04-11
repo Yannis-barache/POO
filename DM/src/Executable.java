@@ -12,6 +12,7 @@ public class Executable {
         Lions lion1=new Lions("Simba",55,true,false);
         Lions lion2=new Lions("Mufasa",120,false,true);
 
+
         // Ajout des animaux dans les enclos
         enclos1.ajouteAnimal(lion1);
         enclos1.ajouteAnimal(lion2);
