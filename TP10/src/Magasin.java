@@ -41,7 +41,10 @@ public class Magasin {
 
     @Override
     public int hashCode(){
-        int nom=this.nom.length()*47+1;
+        int nom=0;
+        for (int i=0;i<this.nom.length();i++){
+            nom+=this.nom.charAt(i)*i;
+        }
         int bool=0;
         if (this.ouvertDimanche && this.ouvertLundi){
             bool=321;
