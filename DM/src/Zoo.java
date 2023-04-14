@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
 import java.lang.Exception;
+import java.util.Collections;
 
 public class Zoo {
     private String nom;
@@ -90,5 +91,11 @@ public class Zoo {
             retour+=enclos.toString();
         }
         return retour+"]";
+    }
+
+    public List<Animaux> trier(){
+        List<Animaux> animauxTries=new ArrayList<>(this.animaux);
+        Collections.sort(animauxTries, new ComparateurNom());
+        return animauxTries;
     }
 }
