@@ -34,6 +34,7 @@ public class Animaux {
         public void setBlessure(boolean blessure) {
                 this.blessure = blessure;
         }
+
         @Override
         public String toString(){
                 if (this.blessure) {
@@ -41,5 +42,4 @@ public class Animaux {
                 }
                 return this.nom+", non blessé, pèse "+this.poids+" kg";
         }
-
 }

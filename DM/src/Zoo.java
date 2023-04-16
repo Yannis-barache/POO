@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.lang.Exception;
 import java.util.Collections;
+import java.util.NoSuchElementException;
 
 public class Zoo {
     private String nom;
@@ -32,6 +33,7 @@ public class Zoo {
             if (enclos1.getNom().equals(enclos.getNom())) {
                 trouve=true;
                 enclos1.ajouteAnimal(animal);
+                this.animaux.add(animal);
             }
         }
         if (!trouve) {
@@ -52,12 +54,11 @@ public class Zoo {
             if (animal.getNom().equals(nomAnimal) && animal.getBlessure() && animal.getEnclos()!=null ) {
                 animal.setBlessure(false);
                 trouve=true;
-            }
-            if (animal.getNom().equals(nomAnimal) && animal.getBlessure() && animal.getEnclos()==null ) {
+                System.out.println("L'animal "+nomAnimal+" a été soigné");
+            }else if (animal.getNom().equals(nomAnimal) && animal.getBlessure() && animal.getEnclos()==null ) {
                 System.out.println("L'animal "+nomAnimal+" n'est pas dans un enclos");
                 trouve=true;
-            }
-            if (animal.getNom().equals(nomAnimal) && !animal.getBlessure() && animal.getEnclos()!=null ) {
+            }else if (animal.getNom().equals(nomAnimal) && !animal.getBlessure() && animal.getEnclos()!=null ) {
                 System.out.println("L'animal "+nomAnimal+" n'est pas blessé");
                 trouve=true;
             }
@@ -67,35 +68,45 @@ public class Zoo {
         }
     }
 
-    public String listerAnimauxDansEnclos(String nomEnclos) throws Exception{
-        String retour="";
-        boolean trouve=false;
+    public String listerAnimauxDansEnclos(String nomEnclos) throws NoSuchElementException {
+        String retour="Les animaux dans l'enclos \""+nomEnclos+"\" sont : ";
+        boolean enclosExiste = false;
         for (Enclos enclos : this.enclos) {
             if (enclos.getNom().equals(nomEnclos)) {
-                trouve=true;
+                enclosExiste = true;
                 for (Animaux animal : enclos.getAnimaux()) {
-                    retour+=animal.getNom()+"\n";
+                    retour+=animal.getNom()+" ";
                 }
             }
         }
-        if (!trouve) {
-            throw new Exception("L'enclos "+nomEnclos+" n'existe pas");
+        if (!enclosExiste) {
+            throw new NoSuchElementException("L'enclos \""+nomEnclos+"\" n'existe pas");
         }
         return retour;
     }
 
+    public List<Animaux> trie(){
+        List<Animaux> animauxTries=new ArrayList<>(this.animaux);
+        Collections.sort(animauxTries, new ComparateurNom());
+        return animauxTries;
+    }
+
+    public Animaux getAnimalLePlusLourd(){
+        return Collections.max(this.animaux, new ComparateurPoids());
+    }
+
+
     @Override
     public String toString(){
-        String retour="Le zoo de "+this.nom+" contient \n [";
+        String retour="Le zoo de "+this.nom+" "+ "contient \n [";
         for (Enclos enclos : this.enclos) {
             retour+=enclos.toString();
         }
         return retour+"]";
     }
 
-    public List<Animaux> trier(){
-        List<Animaux> animauxTries=new ArrayList<>(this.animaux);
-        Collections.sort(animauxTries, new ComparateurNom());
-        return animauxTries;
-    }
+
+
 }
+
+

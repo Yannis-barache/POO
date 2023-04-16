@@ -38,18 +38,6 @@ public class Enclos {
         return this.animaux;
     }
 
-    /**
-     * @return la description de l'enclos
-     */
-    @Override
-    public String toString(){
-        String retour="";
-        for (Animaux animal : this.animaux) {
-            retour+="dans l'"+this.nom+" ("+this.superficie+" m2"+") "+ animal.toString()+"\n" ;
-        }
-        return retour;
-    }
-
     /** Ajoute un animal à l'enclos
      * @param animal l'animal à ajouter à l'enclos
      */
@@ -66,5 +54,19 @@ public class Enclos {
             }
         }
     }
+
+    /**
+     * @return la description de l'enclos
+     */
+    @Override
+    public String toString(){
+        String retour="";
+        for (Animaux animal : this.animaux) {
+            retour+="dans l'"+this.nom+" ("+this.superficie+" m2"+") "+ animal.toString()+"\n" ;
+        }
+        return retour;
+    }
+
+
 
 }
