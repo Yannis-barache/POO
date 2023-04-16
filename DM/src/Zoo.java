@@ -9,24 +9,40 @@ public class Zoo {
     private List<Animaux> animaux;
     private List<Enclos> enclos;
 
+    /** Crée un zoo
+     * @param nom le nom du zoo
+     */
+
     public Zoo(String nom){
         this.nom=nom;
         this.animaux=new ArrayList<>();
         this.enclos=new ArrayList<>();
     }
 
+    /** Retourne le nom du zoo
+     * @return le nom du zoo
+     */
     public String getNom() {
         return this.nom;
     }
 
+    /** Retourne la liste des animaux du zoo
+     * @return la liste des animaux du zoo
+     */
     public List<Animaux> getAnimaux() {
         return this.animaux;
     }
 
+    /** Retourne la liste des enclos du zoo
+     * @return la liste des enclos du zoo
+     */
     public List<Enclos> getEnclos() {
         return this.enclos;
     }
 
+    /** Ajoute un animal au zoo
+     * @param animal l'animal à ajouter au zoo
+     */
     public void accueillirAnimal(Animaux animal, Enclos enclos) {
         boolean trouve=false;
         for (Enclos enclos1 : this.enclos) {
@@ -41,6 +57,10 @@ public class Zoo {
         }
 
     }
+
+    /** Ajoute un enclos au zoo
+     * @param enclos l'enclos à ajouter au zoo
+     */
     public void ajouteEnclos(Enclos enclos){
         this.enclos.add(enclos);
         for (Animaux animal : enclos.getAnimaux()){
@@ -48,6 +68,9 @@ public class Zoo {
         }
     }
 
+    /** Soigne l'animal passée en paramètre si il est bléssé et dans un enclos
+     * @param nomAnimal le nom de l'animal à soigner
+     */
     public void soigner(String nomAnimal){
         boolean trouve=false;
         for (Animaux animal : this.animaux) {
@@ -68,6 +91,11 @@ public class Zoo {
         }
     }
 
+    /** Retourne la liste des animaux dans l'enclos passé en paramètre
+     * @param nomEnclos le nom de l'enclos
+     * @return la liste des animaux dans l'enclos
+     * @throws NoSuchElementException si l'enclos n'existe pas
+     */
     public String listerAnimauxDansEnclos(String nomEnclos) throws NoSuchElementException {
         String retour="Les animaux dans l'enclos \""+nomEnclos+"\" sont : ";
         boolean enclosExiste = false;
@@ -85,17 +113,26 @@ public class Zoo {
         return retour;
     }
 
+    /** Retourne la liste des animaux dans le zoo triée par nom
+     * @return la liste des animaux dans le zoo triée par nom
+     */
     public List<Animaux> trie(){
         List<Animaux> animauxTries=new ArrayList<>(this.animaux);
         Collections.sort(animauxTries, new ComparateurNom());
         return animauxTries;
     }
 
+    /** Retourne l'animal le plus lourd du zoo
+     * @return l'animal le plus lourd du zoo
+     */
     public Animaux getAnimalLePlusLourd(){
         return Collections.max(this.animaux, new ComparateurPoids());
     }
 
 
+    /** Retourne une chaîne de caractères représentant le zoo
+     * @return une chaîne de caractères représentant le zoo
+     */
     @Override
     public String toString(){
         String retour="Le zoo de "+this.nom+" "+ "contient \n [";
