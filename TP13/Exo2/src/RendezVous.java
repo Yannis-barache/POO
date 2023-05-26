@@ -4,8 +4,7 @@ import java.io.Serializable;
 import java.lang.Comparable;
 import java.text.ParseException;
 
-class RendezVous implements 
-{ 
+class RendezVous implements Comparable<RendezVous>  { 
     private Date debut;
     private Date fin;
     
@@ -20,7 +19,7 @@ class RendezVous implements
  
     }
     @Override
-    public int         
+    public int compareTo(RendezVous v)        
     {
         return this.debut.compareTo(v.debut);
     }
@@ -33,5 +32,6 @@ class RendezVous implements
      */
     public boolean intersecte(RendezVous rendezVous)
     {
+        return this.debut.compareTo(rendezVous.fin) <= 0 && rendezVous.debut.compareTo(this.fin) <= 0;
     }
 }
