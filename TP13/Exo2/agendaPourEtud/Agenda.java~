@@ -1,0 +1,35 @@
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Agenda 
+{
+    private List<RendezVous> contenu;
+
+    public Agenda(){
+        this.contenu = new ArrayList<>();
+    } 
+
+    public RendezVous getPremier() throws AgendaVideException {
+	    if(this.contenu.isEmpty())
+	        throw new AgendaVideException("Agenda sans rendez vous"); 
+        return Collections.min(this.contenu);
+    }
+
+    public void ajoute (RendezVous rendezVous) throws PasDeDisponibiliteException{
+        for(RendezVous existant : this.contenu)
+            if(rendezVous.intersecte(existant))
+                throw new 
+                   PasDeDisponibiliteException(
+                      "Déjà un rendez vous à cette heure : ",
+                      existant 
+                    );
+        this.contenu.add(rendezVous);
+    }
+    @Override
+    public String toString()
+    {
+        return this.contenu.toString();
+    }
+}
