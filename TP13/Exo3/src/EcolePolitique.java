@@ -15,9 +15,7 @@ public class EcolePolitique implements Etablissement{
     public List<String> getSelection(List<Etudiant> listeEtudiants){
         List<String> selection = new ArrayList<String>();
         Collections.sort(listeEtudiants,new ComparateurPolitique());
-        for (Etudiant etudiant : listeEtudiants){
-            selection.add(etudiant.toString());
-        }
+
         return selection;
     }
 

@@ -25,7 +25,7 @@ public class ExecutableTelepathie {
                                        "Chewbaka",
                                        2, 11, 18);
         Etudiant yoda = new Etudiant("Yoda", "Maitre",
-                                     15, 13, 20);
+                                     13, 15, 20);
         List<Etudiant> listeEtudiants = 
                      Arrays.asList(luke, solo, chewie,
                                    yoda, leia);

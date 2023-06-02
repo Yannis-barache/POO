@@ -5,7 +5,7 @@ public class Etudiant implements Comparable<Etudiant>{
     private int telekinesie;
     private int precognition;
 
-    public Etudiant(String prenom,String nom,int telepathie, int telekinesie, int precognition){
+    public Etudiant(String nom,String prenom,int telekinesie, int telepathie, int precognition){
         this.prenom = prenom;
         this.nom = nom;
         this.telepathie = telepathie;
