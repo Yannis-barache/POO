@@ -74,36 +74,36 @@ public class ExecutableTelepathie {
         List<Etablissement> lesEcoles = Arrays.asList(ecoleDesMines, 
                      sciencePoParis, sciencePoRennes, ecoleDesBeauxArts);
 
-        // System.out.println("Liste Principale");
-        // System.out.println(Attribution.listePrincipale(listeEtudiants,
-        //                    lesEcoles));
-        // System.out.println();
-        // // Liste Principale
-        // // {Chewbaka WaoWaaoWaooo - télépathie : 11 précognition : 18 
-        // //  telekinésie : 2 = [Les beaux arts (5 places)], 
-        // //  Leia Organa - télépathie : 15 précognition : 17 
-        // //  telekinésie : 12 = [Ecole des Mines (3 places), 
-        // //                      Les beaux arts (5 places)],
-        // //  Han Solo - télépathie : 10 précognition : 10
-        // //  telekinésie : 15 = [Ecole des Mines (3 places), 
-        // //                      Les beaux arts (5 places)],
-        // //  Luke Skywalker - télépathie : 8 précognition : 14 
-        // //  telekinésie : 2 = [Les beaux arts (5 places)],
-        // //  Maitre Yoda - télépathie : 15 précognition : 20 
-        // //  telekinésie : 13 = [Ecole des Mines (3 places),
-        // //                      Science Po Rennes (1 place), 
-        // //                      Science Po Paris (1 place), 
-        // //                      Les beaux arts (5 places)]}
-        // System.out.println(); 
-        // try {
-        //     System.out.println("Le meilleur en télépathie");
-        //     System.out.println(Attribution.maximum(listeEtudiants));
-        //     // Le meilleur en télépathie
-        //     // Maitre Yoda - télépathie : 15 précognition : 20 
-        //     // telekinésie : 13
-        // }
-        // catch (PasDeTelEtudiant excep) {
-        //     System.out.println("Il n'y en a pas \n");
-        // }
+        System.out.println("Liste Principale");
+        System.out.println(Attribution.listePrincipale(listeEtudiants,
+                           lesEcoles));
+        System.out.println();
+        // Liste Principale
+        // {Chewbaka WaoWaaoWaooo - télépathie : 11 précognition : 18 
+        //  telekinésie : 2 = [Les beaux arts (5 places)], 
+        //  Leia Organa - télépathie : 15 précognition : 17 
+        //  telekinésie : 12 = [Ecole des Mines (3 places), 
+        //                      Les beaux arts (5 places)],
+        //  Han Solo - télépathie : 10 précognition : 10
+        //  telekinésie : 15 = [Ecole des Mines (3 places), 
+        //                      Les beaux arts (5 places)],
+        //  Luke Skywalker - télépathie : 8 précognition : 14 
+        //  telekinésie : 2 = [Les beaux arts (5 places)],
+        //  Maitre Yoda - télépathie : 15 précognition : 20 
+        //  telekinésie : 13 = [Ecole des Mines (3 places),
+        //                      Science Po Rennes (1 place), 
+        //                      Science Po Paris (1 place), 
+        //                      Les beaux arts (5 places)]}
+        System.out.println(); 
+        try {
+            System.out.println("Le meilleur en télépathie");
+            System.out.println(Attribution.maximum(listeEtudiants));
+            // Le meilleur en télépathie
+            // Maitre Yoda - télépathie : 15 précognition : 20 
+            // telekinésie : 13
+        }
+        catch (PasDeTelEtudiant excep) {
+            System.out.println("Il n'y en a pas \n");
+        }
     }
 }
