@@ -1,20 +1,30 @@
-public class CoupleEntier<T extends Comparable<? super T>> {
-    private T first,second;
+public class CoupleEntier {
+    private int first,second;
 
 
-    public CoupleEntier(T x, T y){
+    public CoupleEntier(int x,int y){
         this.first = x;
         this.second = y;
     }
 
-    public T getFirst(){
+    public int getFirst(){
         return this.first;
     }
 
 
-    public T getSecond(){
+    public int getSecond(){
         return this.second;
 
+    }
+
+    public boolean equals(Object o){
+        if(o==null){return false;}
+        if(o==this){return true;}
+        if (o instanceof CoupleEntier){
+            CoupleEntier couple= (CoupleEntier) o;
+            return this.first == couple.getFirst() && this.second == couple.getSecond(); 
+        }
+        return false;
     }
 
 }
