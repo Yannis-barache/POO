@@ -9,6 +9,10 @@ public class MaitreDesClefs {
         ronin.setMotDePasse(motDePasse);
     }
 
+    public void interagir(Yakuza yakuza) {
+        yakuza.perdTout();
+    }
+
     public int hashCode() {
         return motDePasse.hashCode();
     }

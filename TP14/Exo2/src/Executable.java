@@ -36,41 +36,57 @@ public class Executable {
         // Et mon sac : [Diamant de 4g, 
         //               Bouquet de 2 dalhia(s) et de 1 rose(s)]
 
-        // Yakuza yakuza = new Yakuza();
-        // yakuza.recevoir(new Argent(2));
-        // yakuza.recevoir(new Diamant(3));
-        // yakuza.recevoir(new BouquetDeFleurs(5, 3));
-        // System.out.println(yakuza); 
-        // // Je suis un Yakuza 
-        // // Et mon sac : [2 pièce(s) de 5g chacune, 
-        // //               Diamant de 3g, 
-        // //               Bouquet de 5 dalhia(s) et de 3 rose(s)]
+        Yakuza yakuza = new Yakuza();
+        yakuza.recevoir(new Argent(2));
+        yakuza.recevoir(new Diamant(3));
+        yakuza.recevoir(new BouquetDeFleurs(5, 3));
+        System.out.println(yakuza+"\n"); 
+        // Je suis un Yakuza 
+        // Et mon sac : [2 pièce(s) de 5g chacune, 
+        //               Diamant de 3g, 
+        //               Bouquet de 5 dalhia(s) et de 3 rose(s)]
 
-        // yakuza.interagir(ronin); 
-        // System.out.println("Après interaction avec un yakuza \n" + ronin);
-        // // Après interaction avec un yakuza 
-        // // Je suis un Ronin mon mot de passe est saloir
-        // // Et mon sac : [Diamant de 4g, 
-        // //               Bouquet de 2 dalhia(s) et de 1 rose(s), 
-        // //               2 pièce(s) de 5g chacune]
+        yakuza.interagir(ronin); 
+        System.out.println("Après interaction avec un yakuza \n" + ronin + "\n");
+        // Après interaction avec un yakuza 
+        // Je suis un Ronin mon mot de passe est saloir
+        // Et mon sac : [Diamant de 4g, 
+        //               Bouquet de 2 dalhia(s) et de 1 rose(s), 
+        //               2 pièce(s) de 5g chacune]
 
-        // System.out.println("Après interaction avec un ronin \n" + yakuza);
-        // // Après interaction avec un ronin 
-        // // Je suis un Yakuza Et mon sac : 
-        // //      [Diamant de 3g, 
-        // //       Bouquet de 5 dalhia(s) et de 3 rose(s)]
+        System.out.println("Après interaction avec un ronin \n" + yakuza + "\n");
+        // Après interaction avec un ronin 
+        // Je suis un Yakuza Et mon sac : 
+        //      [Diamant de 3g, 
+        //       Bouquet de 5 dalhia(s) et de 3 rose(s)]
 
-        // yakuza.interagir(maitre); 
-        // System.out.println("Après interaction avec un yakuza \n" + maitre);
-        // // Après interaction avec un yakuza
-        // // Moi Maître des clefs je suis sourd je refuse les cadeaux! 
-        // // voici mon mot de passe codé 
-        // // 186388748118638874631863887474186388747718638874711863887480
+        yakuza.interagir(maitre); 
+        System.out.println("Après interaction avec un yakuza \n" + maitre   + "\n");
+        // Après interaction avec un yakuza
+        // Moi Maître des clefs je suis sourd je refuse les cadeaux! 
+        // voici mon mot de passe codé 
+        // 186388748118638874631863887474186388747718638874711863887480
 
-        // System.out.println("Après interaction avec le Maître des clefs \n" + yakuza);
-        // // Après interaction avec le Maître des clefs
-        // // Je suis un Yakuza Et mon sac : 
-        // //      [Bouquet de 5 dalhia(s) et de 3 rose(s)]
+        System.out.println("Après interaction avec le Maître des clefs \n" + yakuza + "\n");
+        // Après interaction avec le Maître des clefs
+        // Je suis un Yakuza Et mon sac : 
+        //      [Bouquet de 5 dalhia(s) et de 3 rose(s)]
+
+
+        ronin.interagir(yakuza);
+        System.out.println("Après interaction avec un ronin \n" + yakuza + "\n");
+        // Après interaction avec un ronin
+        // Je suis un Yakuza Et mon sac :
+        //      [Bouquet de 5 dalhia(s) et de 3 rose(s),
+        //               2 pièce(s) de 5g chacune]
+
+        System.out.println("Après interaction avec un yakuza \n" + ronin + "\n");
+
+        // Après interaction avec un yakuza
+        // Je suis un Ronin mon mot de passe est saloir
+        // Et mon sac : [Diamant de 4g,
+        //               Bouquet de 2 dalhia(s) et de 1 rose(s)]
+
 
     }
 }
