@@ -13,7 +13,10 @@ public class ExecutableMagasin {
         magasins.add(beauMagasin);
         magasins.add(magasin);
 
-        
+        Ville trainou= new Ville("Trainou");
+        for (Magasin magasin2 : magasins){
+            trainou.ajouteMagasin(magasin2.getNom(), magasin2.ouvertLundi(), magasin2.ouvertDimanche());
+        }
         assert baracheclub.getNom()=="baracheclub";
         assert baracheclub.ouvertDimanche();
         assert !baracheclub.ouvertLundi();
@@ -30,7 +33,7 @@ public class ExecutableMagasin {
 
         System.out.println(" ");
         System.out.println("Liste des magasins de Trainou ouverts le lundi : ");
-        //System.out.println(magasins.ouvertsLeLundi());
+        System.out.println(trainou.ouvertsLeLundi());
         System.out.println(" ");
         System.out.println("Liste des magasins de Trainou : ");
         System.out.println(magasin.toString());

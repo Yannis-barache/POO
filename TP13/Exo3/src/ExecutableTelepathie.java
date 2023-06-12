@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 public class ExecutableTelepathie {
     public static void main(String [] args) {
@@ -95,15 +97,28 @@ public class ExecutableTelepathie {
         //                      Science Po Paris (1 place), 
         //                      Les beaux arts (5 places)]}
         System.out.println(); 
-        try {
-            System.out.println("Le meilleur en télépathie");
+        
+        System.out.println("Le meilleur en télépathie");
+        try{
             System.out.println(Attribution.maximum(listeEtudiants));
             // Le meilleur en télépathie
-            // Maitre Yoda - télépathie : 15 précognition : 20 
+            // Maitre Yoda - télépathie : 15 précognition : 20
             // telekinésie : 13
+
+        } catch (PasDeTelEtudiant e) {
+            System.out.println("Pas de tel etudiant");
         }
-        catch (PasDeTelEtudiant excep) {
-            System.out.println("Il n'y en a pas \n");
-        }
+
+        System.out.println(ecoleDesMines.getSelection(listeEtudiants)+"\n");
+
+        List<Etudiant> listeEtudiants2 = new ArrayList<>(listeEtudiants);
+
+        Collections.sort(listeEtudiants2, new ComparateurBTP());
+        System.out.println(listeEtudiants2);
+
+
+
+        
+        
     }
 }
