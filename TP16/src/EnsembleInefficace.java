@@ -29,4 +29,19 @@ public class EnsembleInefficace<T> extends AbstractSet<T> {
         return true;
     }
 
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null) {
+            return false;
+        }
+        if (obj==this) {
+            return true;
+        }
+        if (obj instanceof EnsembleInefficace) {
+            EnsembleInefficace<?> ensembleInefficace = (EnsembleInefficace<?>) obj;
+            return this.listeInterne.equals(ensembleInefficace.listeInterne);
+        }
+        return false;
+    }
+
 }
